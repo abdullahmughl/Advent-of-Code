@@ -23,3 +23,20 @@ for (let i=0; i< lengthOfArray; i++) {
 }
 
 // ---------------------------------------------------- //
+
+// Part 2
+
+const frequency = {}
+let similarityScore = 0
+
+y.forEach((val) => {
+  frequency[val] = (frequency[val] || 0) + 1
+})
+
+x.map((value) => {
+  if (frequency[value]) {
+    similarityScore = similarityScore + (value *frequency[value])
+  }
+})
+
+console.log('The similarity is: ', similarityScore)
