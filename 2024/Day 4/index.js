@@ -50,4 +50,25 @@ for (let r = 0; r < R; r++) {
   }
 }
 
-console.log(count); 
+// console.log(count); 
+
+// ---------------------------------------------------- //
+
+// Part 2
+
+let result = 0
+let masPattern = ['MASMS', 'MASSM', 'SAMMS', 'SAMSM']
+
+for (let r = 0; r < R; r++) {
+  for (let c = 0; c < C; c++) {
+
+    if (r+2<R && c+2<C){
+      const value = lines[r][c] + lines[r+1][c+1] + lines[r+2][c+2] + lines[r+2][c] + lines[r][c+2]
+      if (masPattern.includes(value)) {
+        result++;
+      }
+    }
+  }
+}
+
+console.log(result)
