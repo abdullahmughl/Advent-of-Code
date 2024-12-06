@@ -45,7 +45,7 @@ while (true){
   if (newPosition[0] < 0 || newPosition[0] >= grid[0].length || newPosition[1] < 0 || newPosition[1] >= grid.length ) {
     break;
   }
-  console.log(newPosition)
+
   if (grid[newPosition[0]][newPosition[1]] == '#'){
     currentDirection = changeDirection()
   } else {
@@ -55,8 +55,8 @@ while (true){
 
 }
 
-const uniqueArray = locationsVisited.filter((item, index, self) =>
+const removeDuplicatLocations = locationsVisited.filter((item, index, self) =>
   index === self.findIndex((innerArray) => JSON.stringify(innerArray) === JSON.stringify(item))
 );
 
-console.log(uniqueArray.length)
+console.log(removeDuplicatLocations.length)
