@@ -22,6 +22,7 @@ function findCombination(numbers, result, combinations) {
 
   findCombination(remainingNumbers, result + nextNumber, combinations);
   findCombination(remainingNumbers, result * nextNumber, combinations);
+  findCombination(remainingNumbers, parseInt(`${result}${nextNumber}`), combinations); // Part 2
 }
 
 lines.map((line) => {
